@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div class="container">
+    <form class="form-create-user" method="post" action="/owner/postUpdateTask">
+        <h2 class="form-create-user-label">Создание юзера</h2>
+        <br>
+        <h2 class="form-create-user-label">{{label}}</h2>
+
+        <input type="hidden"  id="id" name="id" value="{{#task}}{{id}}{{/task}}" required>
+        <p>
+            <label for="nameTask">Название</label>
+            <input type="text" id="nameTask" name="nameTask" value="{{#task}}{{title}}{{/task}}" placeholder="Username" required>
+        </p>
+        <p>
+            <label for="importantTitle">Роль</label>
+            Сейчас выбран {{importantName}}.
+            <select name="importantTitle" id="importantTitle">
+                <option selected value="old">
+                    Оставить страрое
+                </option>
+                <option selected value="UNIMPORTANT">
+                    Неважно
+                </option>
+                <option value="MINOR_IMPORTANCE">
+                    Минимальная важность
+                </option>
+                <option value="MEDIUM_IMPORTANCE">
+                    Средняя важность
+                </option>
+                <option value="VERY_IMPORTANT">
+                    Высокая важность
+                </option>
+            </select>
+        </p>
+        <p>
+            <label for="info">Инфо</label>
+            <textarea type="text" id="info" name="info" value="" placeholder="Информация о работнике">{{#task}}{{info}}{{/task}}</textarea>
+        </p>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Создать</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container mt-2">
+    <div class="row justify-content-between">
+        <div class="col-12"><a href="" class="border border-dark rounded">Выход в главное меню</a>
+            <a href="" class="border border-dark rounded">Обратно</a></div>
+    </div>
+</div>
+<body>
+<div class="container text-center">
+    <h5>Задача</h5>
+    <div class="row justify-content-center border border-dark rounded">
+
+    {{#task}}
+        <div class="col-12 border-bottom border-dark py-3">
+            <div>Название: {{title}}</div>
+            <div>Информация: {{info}}</div>
+            <div>Статус: {{statusTask}}</div>
+            <div>Важность: {{important}}</div>
+            <div>Назначенный сотрудник</div>
+            <div>Имя: {{employee.firstName}}</div>
+            <div>Фамилия: {{employee.lastName}}</div>
+            <div>Юзер: {{employee.users.userName}}</div>
+        </div>
+        <br>
+    {{/task}}
+    </div>
+    <h5>Отчеты о смене статуса</h5>
+    <div class="row justify-content-center border border-dark rounded">
+    {{#taskReportChange}}
+        <div class="col-12 border-bottom border-dark py-3">
+            <div>Заголовок: {{titleReport}}</div>
+            <div>Текст: {{textReport}}</div>
+            <div>Ссылка для проверки: {{linkReport}}</div>
+            <div>Назначеный статус: {{newStatus}}</div>
+            <div>Дата: {{dateReport}}</div>
+            <div>Сотрудник отправивший отчет</div>
+            <div>Имя: {{employee.firstName}}</div>
+            <div>Фамилия: {{employee.lastName}}</div>
+            <div>Юзер: {{employee.users.userName}}</div>
+        </div>
+        <br>
+    {{/taskReportChange}}
+    </div>
+    <h5>Отчеты</h5>
+    <div class="row justify-content-center border border-dark rounded">
+    {{#taskReport}}
+        <div class="col-12 border-bottom border-dark py-3">
+            <div>Заголовок: {{titleReport}}</div>
+            <div>Текст: {{textReport}}</div>
+            <div>Дата: {{dateReport}}</div>
+            <div>Сотрудник отправивший отчет</div>
+            <div>Имя: {{employee.firstName}}</div>
+            <div>Фамилия: {{employee.lastName}}</div>
+            <div>Юзер: {{employee.users.userName}}</div>
+        </div>
+        <br>
+    {{/taskReport}}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div class="container">
+    <h2 class="form-create-user-label">{{title}}</h2>
+    <a href="{{link}}">посмотреть не активных пользователей</a>
+    <br>
+    <h2 class="form-create-user-label">{{label}}</h2>
+    {{#employeeList}}
+        <div>
+            <span>{{users.userName}}</span>
+            <span>{{users.password}}</span>
+            <span>{{users.role}}</span>
+            <br>
+            <span>{{firstName}}</span>
+            <span>{{lastName}}</span>
+            <span>{{patronymic}}</span>
+            <br>
+            <span>{{info}}</span>
+            <a href="/admin/updateUsers/{{id}}">изменить</a>
+            <form action="/admin/postСhangeStatusUsers" method="POST">
+                <input type="hidden"  id="id" name="id" value="{{id}}" required>
+                <button type="submit">изменить статус</button>
+            </form>
+
+        </div>
+    {{/employeeList}}
+    <br>
+    <br>
+</div>
+</body>
+</html>

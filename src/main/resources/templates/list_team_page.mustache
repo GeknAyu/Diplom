@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div>
+    <div><a href="/owner/createTeam">Создать команду</a></div>
+</div>
+<div class="container">
+    {{#teamList}}
+        <div>
+            <div>Назвение команды: {{nameTeam}}</div>
+            <div>Информация о команде: {{infoTeam}}</div>
+            <div><a href="/owner/updateTeam/{{id}}">Изменить информацию о команде </a></div>
+            <div><a href="/owner/squadList/{{id}}">Изменить состав команды</a></div>
+        </div>
+    {{/teamList}}
+</div>
+</body>
+</html>

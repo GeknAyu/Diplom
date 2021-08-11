@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container mt-2">
+    <div class="row justify-content-between">
+        <div class="col-12"><a href="" class="border border-dark rounded">Выход в главное меню</a>
+            <a href="" class="border border-dark rounded">Обратно</a></div>
+    </div>
+</div>
+<body>
+<div class="container ">
+
+    <div class="form-create-user">
+        <div class="row justify-content-center text-center border border-dark rounded">
+        <div><h2 class="form-create-user-label">назначение на задание</h2></div>
+        <br>
+        <h2 class="form-create-user-label">{{label}}</h2>
+        {{#task}}
+        <div>
+            <div>Название {{title}}</div>
+            <div>Важность {{important}}</div>
+            <div>Информация {{info}}</div>
+        </div>
+        {{/task}}
+        </div>
+        <div class="row justify-content-center text-center border border-dark rounded">
+        <h2 class="">Желающие выполнять эту задачу</h2>
+        {{#taskRequests}}
+            <div class="col-12 border-bottom border-dark">
+                <div>Юзернайм{{employee.users.userName}}</div>
+                <div>Имя{{employee.firstName}}</div>
+                <div>Фамилия{{employee.lastName}}</div>
+                <div>Отчество{{employee.patronymic}}</div>
+                <div>{{employee.info}}</div>
+                <form class="form-create-user" method="post" action="/master/postSetEmployeeTask">
+                    <input type="hidden" id="idEmployee" name="idEmployee" value="{{employee.id}}"  required>
+                    <input type="hidden" id="idTask" name="idTask" value="{{idTask}}"  required>
+                    <br>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Выбрать</button>
+                </form>
+            </div>
+        <br>
+        {{/taskRequests}}
+        </div>
+        <div class="row justify-content-center text-center border border-dark rounded">
+        <h2 class="">Список команды привязаной к данной доске</h2>
+        {{#listEmployee}}
+            <div class="col-12 border-bottom border-dark">
+                <div>Юзернайм {{users.userName}}</div>
+                <div>Имя {{firstName}}</div>
+                <div>Фамилия {{lastName}}</div>
+                <div>Отчество {{patronymic}}</div>
+                <div>Информация {{info}}</div>
+                <form class="form-create-user" method="post" action="/master/postSetEmployeeTask">
+                    <input type="hidden" id="idEmployee" name="idEmployee" value="{{id}}"  required>
+                    <input type="hidden" id="idTask" name="idTask" value="{{idTask}}"  required>
+                    <br>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Выбрать</button>
+                </form>
+            </div>
+
+            <br>
+        {{/listEmployee}}
+        </div>
+    </div>
+</div>
+</body>
+</html>

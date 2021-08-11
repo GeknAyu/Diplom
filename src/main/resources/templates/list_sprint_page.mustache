@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div>
+    <div><a href="/owner/createSprint/{{idBoard}}">Создать спринт</a><div>
+</div>
+<div class="container">
+    {{#sprintList}}
+        <div>
+            <div>Номер спринта: {{number}}</div>
+            <div>Название спринта: {{nameSprint}}</div>
+            <div>Дата начала спринта: {{dateStart}}</div>
+            <div>Дата конца спринта: {{dateEnd}}</div>
+            <div><a href="/owner/updateSprint/{{id}}">Изменить информацию о спринте</a></div>
+            <div><a href="/owner/listTask/{{id}}">Задачи спринта</a></div>
+        </div>
+    {{/sprintList}}
+</div>
+</body>
+</html>

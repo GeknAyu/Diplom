@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div>
+    <div><a href="/owner/createBoard">Создать доску</a><div>
+</div>
+<div class="container">
+    {{#boardList}}
+        <div>
+            <div>Назвение команды: {{nameBoard}}</div>
+            <div>Информация о команде: {{infoBoard}}</div>
+            <div><a href="/owner/updateBoard/{{id}}">Изменить информацию о команде </a></div>
+            <div><a href="/owner/listSprint/{{id}}">Спринты</a></div>
+        </div>
+    {{/boardList}}
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div class="container">
+    <form class="form-create-user" method="post" action="/owner/postCreateSprint">
+        <h2 class="form-create-user-label">Создание доски</h2>
+        <br>
+        <h2 class="form-create-user-label">{{label}}</h2>
+        <input type="hidden" id="idBoard" name="idBoard"  value="{{id}}" required>
+        <p>
+            <label for="nameSprint">Имя спринта</label>
+            <input type="text" id="nameSprint" name="nameSprint"  placeholder="Имя спринта" required>
+        </p>
+        <p>
+            <label for="ds">Дата начала</label>
+            <input type="datetime" id="ds" name="ds"></input>
+        </p>
+        <p>
+            <label for="de">Дата начала</label>
+            <input type="datetime" id="de" name="de"></input>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Создать</button>
+    </form>
+</div>
+</body>
+</html>

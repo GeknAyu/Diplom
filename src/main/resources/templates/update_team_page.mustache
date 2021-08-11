@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container mt-2">
+    <div class="row justify-content-between">
+        <div class="col-12"><a href="" class="border border-dark rounded">Выход в главное меню</a>
+            <a href="" class="border border-dark rounded">Обратно</a></div>
+    </div>
+</div>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+    <form class="form-create-user text-center col border border-dark rounded mt-3" method="post" action="/owner/postUpdateTeam">
+        <h2 class="form-create-user-label">Изменения команды</h2>
+        <br>
+        <h2 class="form-create-user-label">{{label}}</h2>
+
+        <input type="hidden"  id="id" name="id" value="{{#team}}{{id}}{{/team}}" required>
+        <p>
+            <label for="nameTeam">Имя команды</label>
+            <input type="text" id="nameTeam" name="nameTeam" value="{{#team}}{{nameTeam}}{{/team}}" placeholder="Username" required>
+        </p>
+
+        <p>
+            <label for="info">Информация о команде</label>
+            <textarea type="text" id="info" name="info"  placeholder="Информация о работнике">{{#team}}{{infoTeam}}{{/team}}</textarea>
+        </p>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Изменить</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

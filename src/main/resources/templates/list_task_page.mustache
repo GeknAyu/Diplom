@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div>
+    <div><a href="/owner/createTask/{{idSprint}}">Создать команду</a><div>
+</div>
+<div class="container">
+    {{#taskList}}
+        <div>
+            <div>Заголовок: {{title}}</div>
+            <div>Информация о задаче: {{info}}</div>
+            <div>Важность задачи: {{important}}</div>
+            <div>Статус задачи: {{statusTask}}</div>
+            <div><a href="/owner/updateTask/{{id}}">Изменить информацию о задаче </a></div>
+        </div>
+        <br>
+    {{/taskList}}
+</div>
+</body>
+</html>

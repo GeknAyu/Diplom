@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container mt-2">
+    <div class="row justify-content-between">
+        <div class="col-12"><a href="/developer/taskRequestCreate/{{id}}" class="border border-dark rounded">Выход в главное меню</a>
+            <a href="/developer/taskRequestCreate/{{id}}" class="border border-dark rounded">Обратно</a></div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <div class="row justify-content-center border border-dark rounded  my-2">
+    <form class="form-create-user col-12" method="post" action="/seniorDeveloper/postAcceptTaskReport">
+        <h2 class="form-create-user-label">Создание/Изменение отчета об изменение статуса</h2>
+        <br>
+        <h2 class="form-create-user-label">{{label}}</h2>
+
+        <div>
+            <div>Заголовок: {{task.title}}</div>
+            <div>Информация о здаче: {{task.title}}</div>
+            <div>Важность выполнения: {{task.important}}</div>
+        </div>
+
+        <input type="hidden" id="id" name="id"  value="{{id}}" required>
+        <input type="hidden" id="idReport" name="idReport" value="{{reportId}}">
+        <p>
+            <label for="title">Заголовок отчета</label>
+            <input type="text" id="title" name="title" value="{{reportTitle}}"  placeholder="Заголовок задачи" required>
+        </p>
+        <p><input name="status" type="radio" value="STARTED">Вернуть на доработку</p>
+        <p><input name="status" type="radio" value="FINISHED">Подтвердить</p>
+        <p>
+            <label for="text">Текст отчета</label>
+            <input type="text" id="text" name="text" value="{{reportText}}"  placeholder="Текс отчета" required>
+        </p>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Создать/Изменить</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div class="container">
+
+
+    {{#board}}
+        <span>{{nameBoard}}</span>
+        <br>
+        <span>{{infoBoard}}</span>
+        <br><br>
+        <span>{{team.nameTeam}}</span>
+        <span>{{team.infoTeam}}</span>
+        <a href="/owner/delBoardTeam/{{id}}">убрать</a>
+    {{/board}}
+        <h2 class="form-create-user-label">состав выбранной команды</h2>
+        {{#team}}
+        <div>
+            <span>{{users.userName}}</span>
+            <span>{{users.role}}</span>
+            <br>
+            <span>{{firstName}}</span>
+            <span>{{lastName}}</span>
+            <span>{{patronymic}}</span>
+            <br>
+            <span>{{info}}</span>
+        </div>
+        <br>
+        {{/team}}
+        {{^team}}
+            <div>Команда не выбрана</div>
+        {{/team}}
+    <h2 class="form-create-user-label">Команды</h2>
+
+    {{#teamList}}
+        <div>
+            <span>{{nameTeam}}</span>
+            <span>{{infoTeam}}</span>
+            <a href="/owner/setBoardTeam/{{board.id}}/{{id}}">выбрать</a>
+
+
+        </div>
+    {{/teamList}}
+</div>
+</body>
+</html>

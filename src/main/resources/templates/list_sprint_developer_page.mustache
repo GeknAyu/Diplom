@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div>
+</div>
+<div class="container">
+    {{#sprintList}}
+        <div>
+            <div>Номер спринта: {{number}}</div>
+            <div>Название спринта: {{nameSprint}}</div>
+            <div>Дата начала спринта: {{dateStart}}</div>
+            <div>Дата конца спринта: {{dateEnd}}</div>
+            <div><a href="/main/listTaskViewing/{{id}}">Просмотр</a></div>
+        </div>
+    {{/sprintList}}
+    {{#sprint}}
+    <div>
+        <div>Номер спринта: {{number}}</div>
+        <div>Название спринта: {{nameSprint}}</div>
+        <div>Дата начала спринта: {{dateStart}}</div>
+        <div>Дата конца спринта: {{dateEnd}}</div>
+    <div><a href="/Developer/listTaskWorkDeveloper/{{id}}">Продолжить работу</a></div>
+    </div>
+    {{/sprint}}
+</div>
+</body>
+</html>

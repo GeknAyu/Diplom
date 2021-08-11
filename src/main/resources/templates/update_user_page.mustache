@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div class="container">
+    <form class="form-create-user" method="post" action="/admin/postUpdateUsers">
+        <h2 class="form-create-user-label">Создание юзера</h2>
+        <br>
+        <h2 class="form-create-user-label">{{label}}</h2>
+
+        <input type="hidden"  id="id" name="id" value="{{#employee}}{{id}}{{/employee}}" required>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="{{#employee}}{{users.userName}}{{/employee}}" placeholder="Username" required>
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" value="{{#employee}}{{users.password}}{{/employee}}" placeholder="Password" required>
+        </p>
+        <p>
+            <label for="roleName">Роль</label>
+            Сейчас выбран {{roleName}}.
+            <select name="roleName" id="roleName">
+                <option selected value="old">
+                    Оставить страрое
+                </option>
+                <option value="DEVELOPERS">
+                    Младший разработчик
+                </option>
+                <option value="SENIOR_DEVELOPER">
+                    Старший разработчик
+                </option>
+                <option value="MASTER">
+                    Лидер команды
+                </option>
+                <option value="OWNER">
+                    Управляющий
+                </option>
+            </select>
+        </p>
+        <p>
+            <label for="firstName">Имя</label>
+            <input type="text" id="firstName" name="firstName"  value="{{#employee}}{{firstName}}{{/employee}}" placeholder="Имя" required>
+        </p>
+        <p>
+            <label for="lastName">Фамилия</label>
+            <input type="text" id="lastName" name="lastName"  value="{{#employee}}{{lastName}}{{/employee}}" placeholder="Фамилия" required>
+        </p>
+        <p>
+            <label for="patronymic">Очество</label>
+            <input type="text" id="patronymic" name="patronymic"  value="{{#employee}}{{patronymic}}{{/employee}}" placeholder="Очество">
+        </p>
+        <p>
+            <label for="info">Очество</label>
+            <textarea type="text" id="info" name="info" value="{{#employee}}{{info}}{{/employee}}" placeholder="Информация о работнике"></textarea>
+        </p>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Создать</button>
+    </form>
+</div>
+</body>
+</html>

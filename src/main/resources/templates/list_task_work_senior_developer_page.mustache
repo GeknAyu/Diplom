@@ -1,0 +1,194 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container border border-dark rounded">
+    <div class="row justify-content-between">
+        <div class="col border-right border-secondary">
+            <h5>Не начатые задачи</h5>
+            {{#taskNotStarted}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+
+            <div><a href="/developer/taskRequestCreate/{{id}}">Создать заявку</a></div>
+            </div>
+                <br>
+            {{/taskNotStarted}}
+
+        </div>
+
+
+
+
+        <div class="col border-right border-secondary">
+            <h5>Ваши активные задачи</h5>
+            {{#taskStartedEmp}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+
+                <div><a href="/developer/taskReportCreateUpdate/{{id}}">Создать отчет</a></div>
+                <div><a href="/developer/taskReportChange/{{id}}">Заявить о выполнении </a></div>
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+            </div>
+                <br>
+            {{/taskStartedEmp}}
+            <h5>Задачи о которых вы сообщили сегодня</h5>
+            {{#taskStartedReport}}
+                <div>
+                    <div>Заголовок: {{title}}</div>
+                    <div>Информация о задаче: {{info}}</div>
+                    <div>Важность задачи: {{important}}</div>
+                    <div>Назначенный сотрудник</div>
+                    <div>Имя: {{employee.firstName}}</div>
+                    <div>Фамилия: {{employee.lastName}}</div>
+                    <div>Юзер: {{employee.users.userName}}</div>
+                    <div><a href="/seniorDeveloper/taskReportAccept/{{id}}">Изменить сообщения об ошибке</a></div>
+
+                    <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+                </div>
+                <br>
+            {{/taskStartedReport}}
+            <h5>Активные задачи</h5>
+            {{#taskStarted}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+                <div>Назначенный сотрудник</div>
+                <div>Имя: {{employee.firstName}}</div>
+                <div>Фамилия: {{employee.lastName}}</div>
+                <div>Юзер: {{employee.users.userName}}</div>
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты </a></div>
+            </div>
+                <br>
+            {{/taskStarted}}
+        </div>
+
+
+        <div class="col border-right border-secondary">
+            <h5>Ваши проверяемые задачи</h5>
+            {{#taskWaitingEmp}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+
+                <div><a href="/developer/taskReportChange/{{id}}">Изменить отчет</a></div>
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+            </div>
+                <br>
+            {{/taskWaitingEmp}}
+            <h5>Проверяемые задачи</h5>
+            {{#taskWaiting}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+                <div>Назначенный сотрудник</div>
+                <div>Имя: {{employee.firstName}}</div>
+                <div>Фамилия: {{employee.lastName}}</div>
+                <div>Юзер: {{employee.users.userName}}</div>
+                <div><a href="/seniorDeveloper/taskReportAccept/{{id}}">Изменить статус</a></div>
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+            </div>
+                <br>
+            {{/taskWaiting}}
+        </div>
+        <div class="col border-right border-secondary">
+            <h5>Ваши выполненные задачи</h5>
+            {{#taskFinishedEmp}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+                <br>
+            </div>
+            {{/taskFinishedEmp}}
+            <h5>Задачи о которых вы сообщили сегодня</h5>
+            {{#taskFinishedReport}}
+                <div>
+                    <div>Заголовок: {{title}}</div>
+                    <div>Информация о задаче: {{info}}</div>
+                    <div>Важность задачи: {{important}}</div>
+                    <div>Назначенный сотрудник</div>
+                    <div>Имя: {{employee.firstName}}</div>
+                    <div>Фамилия: {{employee.lastName}}</div>
+                    <div>Юзер: {{employee.users.userName}}</div>
+                    <div><a href="/seniorDeveloper/taskReportAccept/{{id}}">Изменить сообщения об ошибке</a></div>
+
+                    <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+                </div>
+                <br>
+            {{/taskFinishedReport}}
+            <h5>Выполненные задачи</h5>
+            {{#taskFinished}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+                <div>Назначенный сотрудник</div>
+                <div>Имя: {{employee.firstName}}</div>
+                <div>Фамилия: {{employee.lastName}}</div>
+                <div>Юзер: {{employee.users.userName}}</div>
+                <div><a href="/developer/taskReportBug/{{id}}">Сообщить об ошибке</a></div>
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+            </div>
+                <br>
+            {{/taskFinished}}
+        </div>
+        <div class="col">
+            <h5>Ваши задачи с ошибкой</h5>
+            {{#taskBugEmp}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+                <div><a href="/developer/taskReportAcceptBug/{{id}}">Сообщить об ошибке</a></div>
+
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+            </div>
+                <br>
+            {{/taskBugEmp}}
+            <h5>Задачи о которых вы сообщили сегодня</h5>
+            {{#taskBugReport}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+                <div>Назначенный сотрудник</div>
+                <div>Имя: {{employee.firstName}}</div>
+                <div>Фамилия: {{employee.lastName}}</div>
+                <div>Юзер: {{employee.users.userName}}</div>
+                <div><a href="/developer/taskReportBug/{{id}}">Изменить сообщения об ошибке</a></div>
+
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+                </div>
+                <br>
+            {{/taskBugReport}}
+            <h5>Задачи с ошибкой</h5>
+            {{#taskBug}}
+            <div>
+                <div>Заголовок: {{title}}</div>
+                <div>Информация о задаче: {{info}}</div>
+                <div>Важность задачи: {{important}}</div>
+                <div>Назначенный сотрудник</div>
+                <div>Имя: {{employee.firstName}}</div>
+                <div>Фамилия: {{employee.lastName}}</div>
+                <div>Юзер: {{employee.users.userName}}</div>
+                <div><a href="/main/viewingTask/{{id}}">Просмотреть отчеты</a></div>
+            </div>
+                <br>
+            {{/taskBug}}
+        </div>
+    </div>
+</div>
+</body>
+</html>

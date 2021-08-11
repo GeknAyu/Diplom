@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div class="container">
+    <form class="form-create-user" method="post" action="/owner/postCreateTask">
+        <h2 class="form-create-user-label">Создание доски</h2>
+        <br>
+        <h2 class="form-create-user-label">{{label}}</h2>
+        <input type="hidden" id="id" name="id"  value="{{id}}" required>
+        <p>
+            <label for="title">Заголовок задачи</label>
+            <input type="text" id="title" name="title"  placeholder="Заголовок задачи" required>
+        </p>
+        <p>
+
+            <label for="important">Важность</label>
+            <select name="important" id="important">
+                <option selected value="UNIMPORTANT">
+                    Неважно
+                </option>
+                <option value="MINOR_IMPORTANCE">
+                    Минимальная важность
+                </option>
+                <option value="MEDIUM_IMPORTANCE">
+                    Средняя важность
+                </option>
+                <option value="VERY_IMPORTANT">
+                    Высокая важность
+                </option>
+            </select>
+        </p>
+        <p>
+            <label for="info">Очество</label>
+            <textarea type="text" id="info" name="info"  placeholder="Информация о работнике"></textarea>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Создать</button>
+    </form>
+</div>
+</body>
+</html>

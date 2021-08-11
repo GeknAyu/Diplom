@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Customer</title>
+</head>
+<body>
+<div class="container">
+    <form class="form-create-user" method="post" action="/owner/postCreateBoard">
+        <h2 class="form-create-user-label">Создание доски</h2>
+        <br>
+        <h2 class="form-create-user-label">{{label}}</h2>
+        <p>
+            <label for="nameBoard">nameBoard</label>
+            <input type="text" id="nameBoard" name="nameBoard"  placeholder="Имя доски" required>
+        </p>
+        <p>
+            <label for="info">Очество</label>
+            <textarea type="text" id="info" name="info"  placeholder="Информация о доске"></textarea>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Создать</button>
+    </form>
+</div>
+</body>
+</html>

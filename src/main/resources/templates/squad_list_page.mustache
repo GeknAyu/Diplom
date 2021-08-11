@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container mt-2">
+    <div class="row justify-content-between">
+        <div class="col-12"><a href="" class="border border-dark rounded">Выход в главное меню</a>
+            <a href="" class="border border-dark rounded">Обратно</a></div>
+    </div>
+</div>
+<body>
+<div class="container">
+    <div class="row justify-content-center text-center border border-dark rounded">
+    <h3 class="form-create-user-label">уже в команде</h3>
+    {{#teamList}}
+        <div class="text-center col-12 border-bottom border-dark ">
+            <span>{{users.userName}}</span>
+            <span>{{users.role}}</span>
+            <br>
+            <span>{{firstName}}</span>
+            <span>{{lastName}}</span>
+            <span>{{patronymic}}</span>
+            <br>
+            <span>{{info}}</span>
+            <a href="/owner/squadListDel/{{idTeam}}/{{id}}/{{roleSearch}}">удалить</a>
+
+
+        </div>
+    {{/teamList}}
+        <div class="text-center col-12 border-bottom border-dark">
+    <h3 class="form-create-user-label">свободны</h3> <br><br>
+    <a class="border border-dark rounded" href="/owner/squadList/{{idTeam}}">Вывести все</a>
+    <a class="border border-dark rounded" href="/owner/squadListDevelopers/{{idTeam}}">Вывести мл. программист</a>
+    <a class="border border-dark rounded" href="/owner/squadListSeniorDevelopers/{{idTeam}}">Вывести ст. программист</a>
+    <a class="border border-dark rounded" href="/owner/squadListMaster/{{idTeam}}">Лидеров(мастеров)</a>
+        </div>
+            {{#employeeList}}
+        <div class="text-center col-12 border-bottom border-dark ">
+            <span>{{users.userName}}</span>
+            <span>{{users.role}}</span>
+            <br>
+            <span>{{firstName}}</span>
+            <span>{{lastName}}</span>
+            <span>{{patronymic}}</span>
+            <br>
+            <span>{{info}}</span>
+            <a href="/owner/squadListAdd/{{idTeam}}/{{id}}/{{roleSearch}}">добавить</a>
+
+
+        </div>
+    {{/employeeList}}
+    </div>
+</div>
+</body>
+</html>
